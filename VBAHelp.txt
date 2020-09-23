@@ -1,0 +1,129 @@
+Using VB-Assembler
+
+OK, as I said this is just an automated VB-Assembler using MASM 5.10 and LINK.EXE
+
+1. First you need to open an ASM Sourcecode file (I added the most common 
+   sample HelloWorld.ASM)
+2. To see if you have a syntax error you have to Compile (On Shell session
+   MASM indicates you what line has an error)
+3. If you don't have any error you can generate the EXE file
+4. You can see the result of the EXE file with the EXECUTE Option menu OR 
+   opening a new MSDOS SESSION
+
+-------------------------------------------------
+8086 Instruction Set Summary 
+-------------------------------------------------
+
+Transport Commands 
+
+IN - Read data from input ports 
+OUT - Write data to output ports 
+MOV - Copy data from source to destination 
+LAHF - Copy flags to AH register 
+SAHF - Copy to flags from AH to flags 
+PUSH - Copy to stack 
+POP - Copy and remove from stack (Restore from stack) 
+PUSHF - Copy flags to stack 
+POPF - Restore flags from stack 
+XCHG - Exchange two items 
+XLAT - Byte translation from table pointed to by BX 
+LEA - Load effective address into pointer 
+LDS - Load DS and pointer 
+LES - Load ES and pointer 
+
+String Commands (modify pointer based upon size and direction flag) 
+
+MOVSB - Move string bytes 
+MOVSW - Move string words 
+CMPSB - Compare string bytes 
+CMPSW - Compare string words 
+SCASB - Scan for a byte in a string 
+SCASW - Scan for a word in a string 
+LODSB - Load AL from a string 
+LODSW - Load AX from a string 
+STOSB - Store byte from AL in string 
+STOSW - Store word from AX in string 
+
+Arithmetic Commands 
+
+ADD - Add 
+ADC - Add with carry in 
+AAA - ASCII adjust after addition 
+DAA - BCD adjust after addition 
+INC - Increment 
+SUB - Subtract 
+SBB - Subtract with borrow 
+AAS - ASCII adjust after subtraction 
+DAS - BCD adjust after subtraction 
+DEC - Decrement 
+NEG - Negate 
+CMP - Compare 
+MUL - Signed multiply 
+IMUL - Unsigned multiply 
+DIV - Signed divide 
+IDIV - Unsigned divide 
+AAM - ASCII adjust after multiplication 
+AAD - ASCII adjust before division 
+CBW - Sign extend byte to word 
+CWD - Sign extend word to double 
+
+Bit Manipulation 
+
+AND - Bit by bit logical AND 
+OR - Bit by bit logical OR 
+XOR - Bit by bit logical exclusive or 
+NOT - Invert all bits 
+TEST - Non-destructive AND 
+SHL - Shift unsigned bit pattern left 
+SAL - Shift signed bit pattern left 
+SHR - Shift unsigned bit pattern right 
+SAR - Shift signed bit pattern right 
+ROL - Rotate bit pattern to the left 
+ROR - Rotate bit pattern to the right 
+RCL - Rotate bit pattern to the left including the C bit 
+RCR - Rotate bit pattern to the right including the C bit 
+
+Program Control 
+
+CALL - Call subroutine (variants are NEAR and FAR) 
+RET - Return from subroutine 
+INT - Software interrupt 
+INTO - Interrupt on overflow 
+IRET - Return from interrupt 
+LOOP - Repeat section of code if CX not zero 
+LOOPE or LOOPZ - Repeat isection of code f CX not zero and Z flag set 
+LOOPNE or LOOPNZ - Repeat section of code if CX not zero and Z flag clear 
+JMP - Go to label or address provided 
+JCXZ - Go to label if CX equal zero 
+JG or JNLE - Jump to label if signed result greater than, or not less than or equal 
+JGE or JNL - Jump to label if signed result greater than or equal, or not less than 
+JE or JZ - Jump to label if equal 
+JLE or JNG - Jump to label if signed result less than or equal, or not greater than 
+JL or JNGE - Jump to label if signed result less than, or not greater than or equal 
+JA or JNBE - Jump to label if unsigned result above, or not below or equal 
+JAE or JNB - Jump to label if unsigned result above or equal, or not below 
+JBE or JNA - Jump to label if unsigned result below or equal, or not above 
+JB or JNAE - Jump to label if unsigned result below, or not above or equal 
+JC - Jump to label if carry set 
+JNC - Jump to label if carry clear 
+JO - Jump to label if overflow 
+JNO - Jump to label if no overflow 
+JP  or JPE - Jump to label if parity set (even parity) 
+JNP or JPO - Jump to label if parity clear (odd parity) 
+JS - Jump to label if negative (sign) 
+JNS - Jump to label if positive (no sign) 
+
+Miscellaneous 
+
+STD - Autodecrement pointer in string commands 
+CLD - Autoincrement pointer in string commands 
+STC - Set carry flag 
+CLC - Clear carry flag 
+CMC - Complement carry flag 
+STI - Set interrupt flag (enable interrupts) 
+CLI - Clear interrupt flag (disable interrupts) 
+HLT - Wait until interrupt 
+WAIT - Wait for /TEST pin to go low 
+ESC - Give bus to coprocessor 
+LOCK - Prevent bus contention during next instruction 
+NOP - No operation (do nothing - a pad instruction) 
